@@ -246,6 +246,7 @@ article {
 article.active {
   display: block;
   animation: fade 0.5s ease backwards;
+  min-height: 820px;
 }
 
 @keyframes fade {
