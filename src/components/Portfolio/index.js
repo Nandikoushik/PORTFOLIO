@@ -37,18 +37,17 @@ export const Portfolio = (props) => {
 
           <li className="project-item  active" data-filter-item data-category="web development">
             <figure className="project-img">
-              <a href="https://crm-client-gold.vercel.app/" target="_blank" rel="noreferrer"><img src={proj1} alt="crm website" loading="lazy" /></a>
+              <img src={proj1} alt="crm website" loading="lazy" />
             </figure>
-            <h3 className="project-title">CRM</h3>
+            <a href={REACT_APP_CRM_URL} target="_blank" rel="noreferrer"><h3 className="project-title">CRM</h3></a>
             <p className="project-category">Customer Relationship Management</p>
           </li>
 
           <li className="project-item  active" data-filter-item data-category="web development">
             <figure className="project-img">
-  <a href="https://koushik2001.vercel.app/" target="_blank" rel="noreferrer"><img src={proj2} alt="portfolio project" loading="lazy" /></a>
-              
+            <img src={proj2} alt="portfolio project" loading="lazy" />
             </figure>
-            <h3 className="project-title">PORTFOLIO</h3>
+            <a href={REACT_APP_PORTFOLIO_URL} target="_blank" rel="noreferrer"><h3 className="project-title">PORTFOLIO</h3></a>
             <p className="project-category">Personal Portfolio Website</p>
           </li>
 
