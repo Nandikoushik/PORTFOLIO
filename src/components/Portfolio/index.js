@@ -1,6 +1,6 @@
 import React from "react";
-import proj1 from "../../images/project-1.jpg";
-import proj2 from "../../images/project-2.png"
+import proj1 from "../../images/crm.png";
+import proj2 from "../../images/portfolio.png"
 
 export const Portfolio = (props) => {
   return (
@@ -37,18 +37,19 @@ export const Portfolio = (props) => {
 
           <li className="project-item  active" data-filter-item data-category="web development">
             <figure className="project-img">
-              <img src={proj1} alt="finance" loading="lazy" />
+              <a href="https://crm-client-gold.vercel.app/" target="_blank" rel="noreferrer"><img src={proj1} alt="crm website" loading="lazy" /></a>
             </figure>
-            <h3 className="project-title">Finance</h3>
-            <p className="project-category">Web development</p>
+            <h3 className="project-title">CRM</h3>
+            <p className="project-category">Customer Relationship Management</p>
           </li>
 
           <li className="project-item  active" data-filter-item data-category="web development">
             <figure className="project-img">
-              <img src={proj2} alt="orizon" loading="lazy" />
+  <a href="https://koushik2001.vercel.app/" target="_blank" rel="noreferrer"><img src={proj2} alt="portfolio project" loading="lazy" /></a>
+              
             </figure>
-            <h3 className="project-title">Orizon</h3>
-            <p className="project-category">Web development</p>
+            <h3 className="project-title">PORTFOLIO</h3>
+            <p className="project-category">Personal Portfolio Website</p>
           </li>
 
         </ul>
