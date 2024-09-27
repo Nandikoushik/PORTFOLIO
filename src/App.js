@@ -4,5 +4,4 @@ import { Routes } from "./Routes/index";
 import "./App.css";
 
 export const App = () => <Router><Routes /></Router>
-
 export default App;
