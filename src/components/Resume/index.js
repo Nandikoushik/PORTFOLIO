@@ -1,5 +1,5 @@
 import React from "react";
-import myResume from "../../images/resume_k_n.pdf"
+import myResume from "../../images/resume_K_N.pdf"
 import { IoBookSharp } from "react-icons/io5";
 import { FaComputer } from "react-icons/fa6";
 import { AiOutlineDownload } from "react-icons/ai";
