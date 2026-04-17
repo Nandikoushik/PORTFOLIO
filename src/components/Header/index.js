@@ -13,7 +13,7 @@ export const Header = () => {
         </li>
 
         <li className="navbar-item">
-          <Link className="navbar-link" to="/resume" >{language.title.resume}</Link>
+          <Link className="navbar-link" to="/skills" >{language.title.skills}</Link>
         </li>
 
         <li className="navbar-item">

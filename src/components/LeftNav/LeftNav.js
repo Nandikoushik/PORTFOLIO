@@ -24,6 +24,33 @@ export const LeftNav = () => {
         <div className="info-content">
           <h1 className="name" title="Richard hanrick">Koushik Nandi</h1>
           <p className="title">MERN Stack Developer</p>
+          <ul className="social-list">
+
+            <li className="social-item">
+              <a href={config.linkedin_profile} className="social-link" target="_blank" rel="noreferrer">
+                <FaLinkedin />
+              </a>
+            </li>
+
+            <li className="social-item">
+              <a href={config.fb_profile} className="social-link" target="_blank" rel="noreferrer">
+                <FaFacebookSquare />
+              </a>
+            </li>
+
+            <li className="social-item">
+              <a href={config.x_profile} className="social-link" target="_blank" rel="noreferrer">
+                <FaXTwitter />
+              </a>
+            </li>
+
+            <li className="social-item">
+              <a href={config.insta_profile} className="social-link" target="_blank" rel="noreferrer">
+                <FaInstagram />
+              </a>
+            </li>
+
+          </ul>
         </div>
         <button className="info_more-btn" data-sidebar-btn onClick={() => onButtonCClick()}>
           <span>Show Contacts</span>
@@ -42,7 +69,7 @@ export const LeftNav = () => {
             <div className="icon-box"><MdOutlineMarkEmailRead /></div>
             <div className="contact-info">
               <p className="contact-title">Email</p>
-              <a href="mailto:koushikbappa2001@gmail.com" className="contact-link">koushikbappa2001@gmail.com</a>
+              <a href="mailto:careerkoushik2023@gmail.com" className="contact-link">careerkoushik2023@gmail.com</a>
             </div>
           </li>
 
@@ -71,39 +98,8 @@ export const LeftNav = () => {
           </li>
 
         </ul>
-
         <div className="separator" />
-
-        <ul className="social-list">
-
-          <li className="social-item">
-            <a href={config.linkedin_profile} className="social-link" target="_blank" rel="noreferrer">
-              <FaLinkedin />
-            </a>
-          </li>
-
-          <li className="social-item">
-            <a href={config.fb_profile} className="social-link" target="_blank" rel="noreferrer">
-              <FaFacebookSquare />
-            </a>
-          </li>
-
-          <li className="social-item">
-            <a href={config.x_profile} className="social-link" target="_blank" rel="noreferrer">
-              <FaXTwitter />
-            </a>
-          </li>
-
-          <li className="social-item">
-            <a href={config.insta_profile} className="social-link" target="_blank" rel="noreferrer">
-              <FaInstagram />
-            </a>
-          </li>
-
-        </ul>
-
       </div>
-
     </aside>
   );
 };
