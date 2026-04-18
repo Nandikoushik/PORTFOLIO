@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoBookSharp } from "react-icons/io5";
 import { FaComputer } from "react-icons/fa6";
 import { MdPhotoCamera } from "react-icons/md";
@@ -66,6 +66,7 @@ const skillIconsMap = {
 const Skills = (props) => {
   const [expandedExperienceIndex, setExpandedExperienceIndex] = useState(null);
   const [expandedEducationIndex, setExpandedEducationIndex] = useState(null);
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
 
   const toggleExperienceExpand = (index) => {
     setExpandedExperienceIndex(
@@ -559,4 +560,4 @@ const Skills = (props) => {
   );
 };
 
-export default  Skills 
+export default Skills; 

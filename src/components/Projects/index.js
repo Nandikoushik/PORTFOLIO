@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import crm from "../../images/crm.png";
-import clkclk from "../../images/clkclk.png";
-import proj2 from "../../images/portfolio.png"
+import crm from "images/crm.png";
+import clkclk from "images/clkclk.png";
+import proj2 from "images/portfolio.png"
+import { useEffect, useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { MdOutlineOpenInNew } from "react-icons/md";
 
 
-export const Portfolio = (props) => {
+const Portfolio = (props) => {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("web development");
-
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
   const projects = [
     {
       id: 1,
@@ -283,7 +283,6 @@ export const Portfolio = (props) => {
                       <h3 className="project-title" style={{
                         fontSize: 'clamp(1rem, 3vw, 1.35rem)',
                         fontWeight: 700,
-                        color: '#ffffff',
                         margin: '0 0 0.5rem 0',
                         transition: 'all 0.3s ease',
                         color: hoveredProject === project.id ? project.color : '#ffffff'
@@ -336,8 +335,6 @@ export const Portfolio = (props) => {
                       justifyContent: 'center',
                       gap: '0.5rem',
                       padding: '0.8rem 1.5rem',
-                      backgroundColor: `${project.color}20`,
-                      color: project.color,
                       border: `2px solid ${project.color}`,
                       borderRadius: '8px',
                       fontSize: '0.9rem',
@@ -377,3 +374,4 @@ export const Portfolio = (props) => {
   );
 };
 
+export default Portfolio;

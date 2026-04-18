@@ -1,16 +1,17 @@
-import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import language from "../../language/language";
-import { config } from "../../Utils/config";
+import language from "language/language";
+import { config } from "Utils/config";
 import { GrSend } from "react-icons/gr";
+import { useState, useRef, useEffect } from "react";
 
-export const Contact = (props) => {
+const Contact = (props) => {
   const regExp = new RegExp(
     /^([^\s@]+@[^\s@]+\.[^\s@!+%^?&#<>=`~{\\[+}|"'"\]$*():;/-]+)*$/,
   );
   const form = useRef();
   const [done, setDone] = useState(false);
   const [formData, setFormData] = useState({});
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -120,3 +121,5 @@ export const Contact = (props) => {
     </article>
   );
 };
+
+export default Contact;

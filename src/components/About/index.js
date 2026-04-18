@@ -1,16 +1,20 @@
-import React, { useState } from "react";
-import myResume from "../../images/resume_K_N.pdf";
-import android from "../../images/android.jpeg";
-import checkBox from "../../images/check-orange.png";
-import iButton from "../../images/business-profile-ico4h.png"
-import photography from "../../images/photography.png";
+import { useEffect, useState } from "react";
+import myResume from "images/resume_K_N.pdf";
+import android from "images/android.jpeg";
+import checkBox from "images/check-orange.png";
+import iButton from "images/business-profile-ico4h.png"
+import photography from "images/photography.png";
 import { AiOutlineDownload } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
-export const About = (props) => {
+import "./index.css";
+
+const About = (props) => {
     const [hoveredService, setHoveredService] = useState(null);
     const [isDownloading, setIsDownloading] = useState(false);
     const [downloadSuccess, setDownloadSuccess] = useState(false);
     const [ripples, setRipples] = useState([]);
+
+    useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
 
     const handleResumeDownload = (e) => {
         setIsDownloading(true);
@@ -33,7 +37,7 @@ export const About = (props) => {
             const pdfUrl = myResume;
             const link = document.createElement("a");
             link.href = pdfUrl;
-            link.download = "Koushik_Nandi_Resume.pdf";
+            link.download = `Koushik_Nandi_Resume-${new Date().getTime()}.pdf`;
             link.click();
 
             setIsDownloading(false);
@@ -51,40 +55,6 @@ export const About = (props) => {
                 <h2 className="h2 article-title animated-text">{props.title}</h2>
             </header>
 
-            <style>{`
-                @keyframes pulse {
-                    0%, 100% { transform: scale(1); }
-                    50% { transform: scale(1.05); }
-                }
-                @keyframes ripple-animation {
-                    0% {
-                        transform: scale(0);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
-                }
-                @keyframes icon-bounce {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-5px); }
-                }
-                @keyframes icon-rotate {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
-                @keyframes border-glow {
-                    0%, 100% { box-shadow: 0 0 10px rgba(30, 144, 255, 0.3); }
-                    50% { box-shadow: 0 0 20px rgba(30, 144, 255, 0.8); }
-                }
-                .resume-button-wrapper {
-                    position: relative;
-                    display: inline-block;
-                    margin-bottom: 2rem;
-                }
-            `}</style>
-
             <div className="resume-button-wrapper">
                 <button
                     onClick={handleResumeDownload}
@@ -94,7 +64,7 @@ export const About = (props) => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: isDownloading ? '0.5rem' : '0.75rem',
-                        padding: '1rem 2.5rem',
+                        padding: '0.5rem',
                         backgroundColor: downloadSuccess
                             ? 'linear-gradient(135deg, #13aa52 0%, #0d7a2f 100%)'
                             : 'linear-gradient(135deg, #1e90ff 0%, #00d4ff 100%)',
@@ -134,7 +104,7 @@ export const About = (props) => {
                     {/* Ripple Effects */}
                     {ripples.map(ripple => (
                         <div
-                            key={ripple.id}
+                            key={"about-ripple-" + ripple.id}
                             style={{
                                 position: 'absolute',
                                 left: ripple.x,
@@ -282,7 +252,7 @@ export const About = (props) => {
                         { id: 3, icon: photography, title: 'Photography', description: 'I make high-quality photos of any category at a professional level.' }
                     ].map((service) => (
                         <li
-                            key={service.id}
+                            key={"about-service-" + service.id}
                             className="service-item"
                             style={{
                                 padding: '2rem',
@@ -356,7 +326,6 @@ export const About = (props) => {
 
                                 <p className="service-item-text" style={{
                                     fontSize: 'clamp(0.9rem, 2vw, 1rem)',
-                                    color: '#cccccc',
                                     lineHeight: 1.6,
                                     margin: 0,
                                     transition: 'color 0.3s ease',
@@ -385,3 +354,5 @@ export const About = (props) => {
         </article>
     );
 };
+
+export default About;

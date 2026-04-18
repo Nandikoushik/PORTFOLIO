@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { config } from "../../Utils/config"
-import profileImg from "../../images/profile.png"
-import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+import { config } from "Utils/config"
+import profileImg from "images/profile.png"
 import { FaXTwitter } from "react-icons/fa6";
 import { LuArrowDownLeft, LuArrowUpRight } from "react-icons/lu";
+import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdOutlineMarkEmailRead, MdPhoneCallback, MdCalendarMonth, MdLocationPin } from "react-icons/md";
 
 
-export const LeftNav = () => {
+const LeftNav = () => {
   const [customclass, setCustomClass] = useState('');
   const onButtonCClick = () => {
     if (!customclass) setCustomClass("active"); else setCustomClass("");
@@ -103,3 +103,5 @@ export const LeftNav = () => {
     </aside>
   );
 };
+
+export default LeftNav;

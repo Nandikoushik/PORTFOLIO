@@ -1,11 +1,10 @@
-import React from "react";
-import { Switch } from "react-router-dom";
 import { Routers } from "./Routers";
+import { Switch } from "react-router-dom";
 import language from "../language/language";
-import { About } from "../components/About"
+import About  from "../components/About"
 import Skills from "../components/Skill";
-import { Portfolio } from "../components/Projects/index";
-import { Contact } from "../components/Contact/index";
+import Portfolio from "../components/Projects";
+import Contact from "../components/Contact";
 export const Routes = () => (
   <Switch>
     <Routers exact path="/" component={About} title={language.title.about} />

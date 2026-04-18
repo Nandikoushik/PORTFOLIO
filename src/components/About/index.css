@@ -1,0 +1,64 @@
+ @keyframes pulse {
+
+     0%,
+     100% {
+         transform: scale(1);
+     }
+
+     50% {
+         transform: scale(1.05);
+     }
+ }
+
+ @keyframes ripple-animation {
+     0% {
+         transform: scale(0);
+         opacity: 1;
+     }
+
+     100% {
+         transform: scale(4);
+         opacity: 0;
+     }
+ }
+
+ @keyframes icon-bounce {
+
+     0%,
+     100% {
+         transform: translateY(0);
+     }
+
+     50% {
+         transform: translateY(-5px);
+     }
+ }
+
+ @keyframes icon-rotate {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ @keyframes border-glow {
+
+     0%,
+     100% {
+         box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+     }
+
+     50% {
+         box-shadow: 0 0 20px rgba(30, 144, 255, 0.8);
+     }
+ }
+
+
+ .resume-button-wrapper {
+     position: relative;
+     display: inline-block;
+     margin-bottom: 1rem;
+ }

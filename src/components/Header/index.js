@@ -1,31 +1,27 @@
-import React from "react";
-import language from "../../language/language";
 import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
+import language from "language/language";
+import "./index.css";
 
-export const Header = () => {
+const Header = () => {
+  const navItems = [
+    { name: language.title.about, path: "/" },
+    { name: language.title.skills, path: "/skills" },
+    { name: language.title.projects, path: "/projects" },
+    { name: language.title.contact, path: "/contact" },
+  ];
   return (
-    <Navbar className="navbar">
-      <ul className="navbar-list">
-
-        <li className="navbar-item">
-          <Link className="navbar-link " to="/" >{language.title.about}</Link>
-        </li>
-
-        <li className="navbar-item">
-          <Link className="navbar-link" to="/skills" >{language.title.skills}</Link>
-        </li>
-
-        <li className="navbar-item">
-          <Link className="navbar-link" to="/projects" >{language.title.projects}</Link>
-        </li>
-
-        <li className="navbar-item">
-          <Link className="navbar-link" to="/contact" >{language.title.contact}</Link>
-        </li>
-
+    <Navbar className="header-navbar">
+      <ul className="header-navbar-list">
+        {navItems?.map((item, index) => (
+          <li key={index + "_" + item.path} className="header-navbar-item">
+            <Link className="header-navbar-link " to={item.path} >{item.name}</Link>
+          </li>
+        ))
+        }
       </ul>
-
     </Navbar>
   );
 };
+
+export default Header;
