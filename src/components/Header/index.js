@@ -9,6 +9,7 @@ const Header = () => {
     { name: language.title.skills, path: "/skills" },
     { name: language.title.projects, path: "/projects" },
     { name: language.title.contact, path: "/contact" },
+    { name: language.title.chat, path: "/chat" },
   ];
   return (
     <Navbar className="header-navbar">

@@ -9,6 +9,7 @@ const Footer = () => {
         { name: language.title.skills, path: "/skills" },
         { name: language.title.projects, path: "/projects" },
         { name: language.title.contact, path: "/contact" },
+        { name: language.title.chat, path: "/chat" },
     ];
     return (
         <article className="active footer" data-page="footer">

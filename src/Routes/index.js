@@ -5,6 +5,7 @@ import About  from "../components/About"
 import Skills from "../components/Skill";
 import Portfolio from "../components/Projects";
 import Contact from "../components/Contact";
+import chatWithme from "../components/Chat";
 export const Routes = () => (
   <Switch>
     <Routers exact path="/" component={About} title={language.title.about} />
@@ -12,5 +13,6 @@ export const Routes = () => (
     <Routers exact path="/projects" component={Portfolio} title={language.title.projects} />
     <Routers exact path="/contact" component={Contact} title={language.title.contact} />
     <Routers exact path="/company" component={About} title={language.title.contact} />
+    <Routers exact path="/chat" component={chatWithme} title={language.title.chat} />
   </Switch>
 );

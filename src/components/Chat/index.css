@@ -1,0 +1,20 @@
+:root {
+  --chat-background: #b4b4b469;
+  --foreground: #d4d4d8;
+  --accent: #f59e0b;
+  --highlight: #fbbf24;
+  --success: #22c55e;
+  --muted: #52525b;
+  --dim: #a1a1aa;
+  --border: #1f1f23;
+}
+
+@keyframes cursor-blink {
+  to {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: cursor-blink 0.9s steps(2) infinite;
+}
