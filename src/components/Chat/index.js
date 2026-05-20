@@ -1,28 +1,9 @@
 import "./index.css";
 import qa from "./data.json";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { config } from "Utils/config";
 
-
-const skills = [
-  { label: "Backend", items: "Node.js, Python, SQL" },
-  { label: "Agentic", items: "Claude Code, Codex, Cursor" },
-  { label: "Tools", items: "Git, Jira,  n8n, Figma , Jenkins " },
-  { label: "Languages", items: "TypeScript, JavaScript, Python , PHP" },
-  { label: "Web", items: "Next.js, React js, React Native, full-stack web dev" },
-];
-
-const projects = [
-  { name: "clkclk", description: "Multi Tenant Cloud Kiosk", stars: 380 },
-  { name: "CRM", description: "Customer Relationship Management ", stars: 170 },
-  { name: "WP CRM", description: "a customer relationship management system that integrates with WhatsApp", stars: 113 }
-];
-
-const contacts = [
-  { label: "website ", value: "nandilabs", href: "https://nandilabs.vercel.app" },
-  { label: "github  ", value: "Nandikoushik", href: "https://github.com/Nandikoushik/wa" },
-  { label: "linkedin", value: "@koushik-nandi", href: "https://www.linkedin.com/in/koushik-nandi-05-06-/" },
-  { label: "email   ", value: "careerkoushik2023@gmail.com", href: "mailto:careerkoushik2023@gmail.com" },
-];
+const { STORAGE_KEY, skills, projects, contacts } = config;
 
 const bioTokens = [
   { text: "Full Stack Developer specializing in " },
@@ -46,9 +27,6 @@ const sectionDefs = [
   { id: "projects", prompt: "ls projects/", tools: ["Fetching projects from GitHub…", "Loading metadata", "Sorting by stars"], bodyKind: "projects", bodySteps: projects.length },
   { id: "contact", prompt: "cat contact.txt", tools: ["Reading contact.txt", "Validating links"], bodyKind: "contact", bodySteps: contacts.length },
 ];
-
-
-const STORAGE_KEY = "koushik-portfolio-chat-seen";
 
 
 const FALLBACK_ANSWER =

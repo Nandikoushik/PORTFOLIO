@@ -3,8 +3,29 @@ export const config = {
     email_service_key: "service_uli3n88",
     email_template_key: "template_gzwhewr",
     email_public_key: "521E2elI-gGJ0FBZi",
-    linkedin_profile:"https://www.linkedin.com/in/koushik-nandi-067733227/",
-    fb_profile:"https://www.facebook.com/localhost8090",
-    insta_profile:"https://www.instagram.com/https_koushik/",
-    x_profile:"https://x.com/corelynxtest01",
+    linkedin_profile: "https://www.linkedin.com/in/koushik-nandi-067733227/",
+    fb_profile: "https://www.facebook.com/localhost8090",
+    insta_profile: "https://www.instagram.com/https_koushik/",
+    x_profile: "https://x.com/corelynxtest01",
+    STORAGE_KEY: "koushik-portfolio-chat-seen",
+    skills: [
+        { label: "Backend", items: "Node.js, Python, SQL" },
+        { label: "Agentic", items: "Claude Code, Codex, Cursor" },
+        { label: "Tools", items: "Git, Jira,  n8n, Figma , Jenkins " },
+        { label: "Languages", items: "TypeScript, JavaScript, Python , PHP" },
+        { label: "Web", items: "Next.js, React js, React Native, full-stack web dev" },
+    ],
+
+    projects: [
+        { name: "clkclk", description: "Multi Tenant Cloud Kiosk", stars: 380 },
+        { name: "CRM", description: "Customer Relationship Management ", stars: 170 },
+        { name: "WP CRM", description: "a customer relationship management system that integrates with WhatsApp", stars: 113 }
+    ],
+
+    contacts: [
+        { label: "website ", value: "nandilabs", href: "https://nandilabs.vercel.app" },
+        { label: "github  ", value: "Nandikoushik", href: "https://github.com/Nandikoushik/wa" },
+        { label: "linkedin", value: "@koushik-nandi", href: "https://www.linkedin.com/in/koushik-nandi-05-06-/" },
+        { label: "email   ", value: "careerkoushik2023@gmail.com", href: "mailto:careerkoushik2023@gmail.com" },
+    ]
 }
