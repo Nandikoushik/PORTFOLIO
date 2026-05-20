@@ -19,7 +19,8 @@ export const config = {
     projects: [
         { name: "clkclk", description: "Multi Tenant Cloud Kiosk", stars: 380 },
         { name: "CRM", description: "Customer Relationship Management ", stars: 170 },
-        { name: "WP CRM", description: "a customer relationship management system that integrates with WhatsApp", stars: 113 }
+        { name: "Tour & Travel", description: "A comprehensive tour management system for travel agencies", stars: 90 },
+        { name: "WP CRM", description: "a customer relationship management system that integrates with WhatsApp", stars: 113 },
     ],
 
     contacts: [
