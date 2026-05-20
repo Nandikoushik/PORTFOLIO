@@ -1,6 +1,7 @@
 import crm from "images/crm.png";
 import tour from "images/tour.png";
 import clkclk from "images/clkclk.png";
+import wpCrm from "images/wpCrm.png";
 import proj2 from "images/portfolio.png"
 import { useEffect, useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
@@ -16,8 +17,8 @@ const Portfolio = (props) => {
       image: tour,
       title: "Tour & Travel",
       category: "web development",
+      url: process.env.REACT_APP_TOUR_URL,
       description: "A comprehensive tour management system for travel agencies",
-      url: process.env.REACT_APP_TOUR_URL || "https://tour-and-travels-red.vercel.app/",
       tags: ["JavaScript", "PostgreSQL", "Management"],
       color: "#1eff35"
     },
@@ -31,22 +32,31 @@ const Portfolio = (props) => {
       color: "#00d4ff"
     },
     {
-      title: "CRM",
+      image: wpCrm,
       category: "web development",
-      description: "Customer Relationship Management",
-      image: crm,
-      url: process.env.REACT_APP_CRM_URL,
-      tags: ["Node.js", "MongoDB", "Management"],
-      color: "#1e90ff"
+      title: "Lead Converter for WhatsApp",
+      url: process.env.REACT_APP_WP_CRM_URL,
+      description: "WhatsApp Lead Converter for Customer Engagement",
+      tags: ["Node.js", "Next.js", "PostgreSQL"],
+      color: "#fffb00"
     },
     {
+      image: crm,
+      title: "CRM System",
+      category: "web development",
+      url: process.env.REACT_APP_CRM_URL,
+      description: "Customer Relationship Management",
+      tags: ["Node.js", "MongoDB", "Management"],
+      color: "#fa9741"
+    },
+    {
+      image: proj2,
       title: "PORTFOLIO",
       category: "web development",
       description: "Personal Portfolio Website",
-      image: proj2,
       url: process.env.REACT_APP_PORTFOLIO_URL,
       tags: ["React", "Web Design", "Portfolio"],
-      color: "#ff0000"
+      color: "#b5f96b"
     }
   ];
 
