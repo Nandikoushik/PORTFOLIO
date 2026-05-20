@@ -1,4 +1,5 @@
 import crm from "images/crm.png";
+import tour from "images/tour.png";
 import clkclk from "images/clkclk.png";
 import proj2 from "images/portfolio.png"
 import { useEffect, useState } from "react";
@@ -12,17 +13,24 @@ const Portfolio = (props) => {
   useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
   const projects = [
     {
-      id: 1,
+      image: tour,
+      title: "Tour & Travel",
+      category: "web development",
+      description: "A comprehensive tour management system for travel agencies",
+      url: process.env.REACT_APP_TOUR_URL || "https://tour-and-travels-red.vercel.app/",
+      tags: ["JavaScript", "PostgreSQL", "Management"],
+      color: "#1eff35"
+    },
+    {
+      image: clkclk,
       title: "ClkClk",
       category: "web development",
-      description: "Multi Tenant Cloud Kiosk",
-      image: clkclk,
+      description: "Multi Tenant Cloud Kiosk Loyalty Generate Platform",
       url: "https://clkclk.com",
-      tags: ["React", "Cloud", "Multi-tenant"],
+      tags: ["React", "Node.js", "Multi-tenant"],
       color: "#00d4ff"
     },
     {
-      id: 2,
       title: "CRM",
       category: "web development",
       description: "Customer Relationship Management",
@@ -32,14 +40,13 @@ const Portfolio = (props) => {
       color: "#1e90ff"
     },
     {
-      id: 3,
       title: "PORTFOLIO",
       category: "web development",
       description: "Personal Portfolio Website",
       image: proj2,
       url: process.env.REACT_APP_PORTFOLIO_URL,
       tags: ["React", "Web Design", "Portfolio"],
-      color: "#00ff88"
+      color: "#ff0000"
     }
   ];
 
@@ -144,12 +151,12 @@ const Portfolio = (props) => {
         }}>
           {filteredProjects.map((project, index) => (
             <li
-              key={index + "_project_" + project.id}
+              key={index + "_project_" + project.title}
               className="project-item-animated"
               style={{
                 animationDelay: `${index * 0.1}s`
               }}
-              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div style={{
@@ -162,11 +169,11 @@ const Portfolio = (props) => {
                 display: 'flex',
                 flexDirection: 'column',
                 cursor: 'pointer',
-                transform: hoveredProject === project.id ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
-                boxShadow: hoveredProject === project.id
+                transform: hoveredProject === index ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
+                boxShadow: hoveredProject === index
                   ? `0 20px 40px ${project.color}33, 0 0 30px ${project.color}22`
                   : '0 8px 16px rgba(0, 0, 0, 0.3)',
-                borderColor: hoveredProject === project.id ? project.color : '#333'
+                borderColor: hoveredProject === index ? project.color : '#333'
               }}>
                 {/* Image Container */}
                 <figure className="project-img" style={{
@@ -191,8 +198,8 @@ const Portfolio = (props) => {
                       height: 'auto',
                       objectFit: 'contain',
                       transition: 'all 0.4s ease',
-                      transform: hoveredProject === project.id ? 'scale(1.05)' : 'scale(1)',
-                      filter: hoveredProject === project.id ? 'brightness(0.7) blur(1px)' : 'brightness(1) blur(0)',
+                      transform: hoveredProject === index ? 'scale(1.05)' : 'scale(1)',
+                      filter: hoveredProject === index ? 'brightness(0.7) blur(1px)' : 'brightness(1) blur(0)',
                       borderRadius: '8px'
                     }}
                   />
@@ -202,7 +209,7 @@ const Portfolio = (props) => {
                     position: 'absolute',
                     inset: 0,
                     background: `linear-gradient(135deg, ${project.color}40, ${project.color}20)`,
-                    opacity: hoveredProject === project.id ? 1 : 0,
+                    opacity: hoveredProject === index ? 1 : 0,
                     transition: 'opacity 0.3s ease',
                     display: 'flex',
                     alignItems: 'center',
@@ -213,7 +220,7 @@ const Portfolio = (props) => {
                       flexDirection: 'column',
                       alignItems: 'center',
                       gap: '1rem',
-                      transform: hoveredProject === project.id ? 'scale(1)' : 'scale(0.8)',
+                      transform: hoveredProject === index ? 'scale(1)' : 'scale(0.8)',
                       transition: 'transform 0.3s ease'
                     }}>
                       <div style={{
@@ -226,7 +233,7 @@ const Portfolio = (props) => {
                         justifyContent: 'center',
                         fontSize: '1.8rem',
                         color: '#000',
-                        animation: hoveredProject === project.id ? 'floatUp 2s ease-in-out infinite' : 'none'
+                        animation: hoveredProject === index ? 'floatUp 2s ease-in-out infinite' : 'none'
                       }}>
                         <MdOutlineOpenInNew />
                       </div>
@@ -254,7 +261,7 @@ const Portfolio = (props) => {
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
-                    opacity: hoveredProject === project.id ? 1 : 0.8,
+                    opacity: hoveredProject === index ? 1 : 0.8,
                     transition: 'all 0.3s ease'
                   }}>
                     {project.category.split(" ")[0]}
@@ -285,7 +292,7 @@ const Portfolio = (props) => {
                         fontWeight: 700,
                         margin: '0 0 0.5rem 0',
                         transition: 'all 0.3s ease',
-                        color: hoveredProject === project.id ? project.color : '#ffffff'
+                        color: hoveredProject === index ? project.color : '#ffffff'
                       }}>
                         {project.title}
                       </h3>
@@ -317,7 +324,7 @@ const Portfolio = (props) => {
                         fontWeight: 600,
                         border: `1px solid ${project.color}40`,
                         transition: 'all 0.3s ease',
-                        transform: hoveredProject === project.id ? 'scale(1.05)' : 'scale(1)'
+                        transform: hoveredProject === index ? 'scale(1.05)' : 'scale(1)'
                       }}>
                         {tag}
                       </span>
@@ -342,17 +349,17 @@ const Portfolio = (props) => {
                       textDecoration: 'none',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
-                      transform: hoveredProject === project.id ? 'translateY(-3px)' : 'translateY(0)',
-                      backgroundColor: hoveredProject === project.id ? project.color : `${project.color}10`,
-                      color: hoveredProject === project.id ? '#000' : project.color,
-                      boxShadow: hoveredProject === project.id ? `0 8px 16px ${project.color}40` : 'none'
+                      transform: hoveredProject === index ? 'translateY(-3px)' : 'translateY(0)',
+                      backgroundColor: hoveredProject === index ? project.color : `${project.color}10`,
+                      color: hoveredProject === index ? '#000' : project.color,
+                      boxShadow: hoveredProject === index ? `0 8px 16px ${project.color}40` : 'none'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = project.color;
                       e.currentTarget.style.color = '#000';
                     }}
                     onMouseLeave={(e) => {
-                      if (hoveredProject === project.id) {
+                      if (hoveredProject === index) {
                         e.currentTarget.style.backgroundColor = project.color;
                         e.currentTarget.style.color = '#000';
                       } else {
